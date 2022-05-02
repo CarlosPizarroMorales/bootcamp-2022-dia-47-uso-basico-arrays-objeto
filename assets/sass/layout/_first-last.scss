@@ -1,20 +1,24 @@
 article {
 
-  width: clamp(500px, 70%, 800px);
-  margin: 2rem auto;
+  width: clamp(500px, 75%, 900px);
+  margin: 2.5rem auto;
 
   @include basic-box-style;
 
   p {
-    border: 1px solid $white;
-    padding: 1rem 0 1.5rem 1rem;
-    line-height: .7rem;
-    vertical-align: middle;
+    border-bottom: 1px dotted $white;
+    padding: 2rem 0 2.25rem 1rem;
+    // line-height: .7rem;
+    font-size: 1rem;
   }
 }
 
 .title.first-last {
+
+  padding: .5rem 0;
   font-size: $fs-h2;
   text-align: center;
+  border-bottom: 1px dotted $white;
+
 }
 

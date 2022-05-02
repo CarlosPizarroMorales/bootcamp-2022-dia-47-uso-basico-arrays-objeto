@@ -144,17 +144,9 @@ const dental = [
  **         PRIMERA-ÚLTIMA ATENCIÓN          **
  **********************************************/
 
-const radiologiaFirstLast = (`
-Primera atención: ${radiologia[0].paciente} - ${radiologia[0].prevision} | Última atención: ${radiologia[radiologia.length - 1].paciente} - ${radiologia[radiologia.length - 1].prevision}
-`);
-
-const traumatologiaFirstLast = (`
-Primera atención: ${traumatologia[0].paciente} - ${traumatologia[0].prevision} | Última atención: ${traumatologia[traumatologia.length - 1].paciente} - ${traumatologia[traumatologia.length - 1].prevision}
-`);
-
-const dentalFirstLast = (`
-Primera atención: ${dental[0].paciente} - ${dental[0].prevision} | Última atención: ${dental[dental.length - 1].paciente} - ${dental[dental.length - 1].prevision}
-`);
+const radiologiaFirstLast = (`Primera atención: ${radiologia[0].paciente} - ${radiologia[0].prevision} | Última atención: ${radiologia[radiologia.length - 1].paciente} - ${radiologia[radiologia.length - 1].prevision}`);
+const traumatologiaFirstLast = (`Primera atención: ${traumatologia[0].paciente} - ${traumatologia[0].prevision} | Última atención: ${traumatologia[traumatologia.length - 1].paciente} - ${traumatologia[traumatologia.length - 1].prevision}`);
+const dentalFirstLast = (`Primera atención: ${dental[0].paciente} - ${dental[0].prevision} | Última atención: ${dental[dental.length - 1].paciente} - ${dental[dental.length - 1].prevision}`);
 
 /**********************************************
  **              SELECTORES DOM              **
@@ -163,8 +155,9 @@ Primera atención: ${dental[0].paciente} - ${dental[0].prevision} | Última aten
 const firstLastRadio = document.querySelector('.first-last__radio');
 const firstLastTrauma = document.querySelector('.first-last__trauma');
 const firstLastDental = document.querySelector('.first-last__dental');
-
-
+const tbodyRadioDiv = document.querySelector('#tbody-radio');
+const tbodyTraumaDiv = document.querySelector('#tbody-trauma');
+const tbodyDentalDiv = document.querySelector('#tbody-dental');
 
 
 /**********************************************
@@ -177,26 +170,16 @@ firstLastTrauma.innerText = traumatologiaFirstLast;
 firstLastDental.innerText = dentalFirstLast;
 
 
+//* TABLAS 
 function recorrerPintar(arreglo, div) {
-  arreglo.forEach( obj => {
-    // aca tomar el div y llenarlo con los datos del arreglo...
-  })
+  arreglo.forEach( obj => div.innerHTML += `<tr><td>${obj.hora}</td><td>${obj.especialista}</td><td>${obj.paciente}</td><td>${obj.rut}</td><td>${obj.prevision}</td>`)
 }
 
 const especialidadDiv = [
-  {
-    especialidad: radiologia,
-    div: radiologiaDiv // reemplazar por el querySelector del parent a llenar.
-  },
-  {
-    especialidad: traumatologia,
-    div: traumatologiaDiv // reemplazar por el querySelector del parent a llenar.
-  },
-  {
-    especialidad: dental,
-    div: dentalDiv // reemplazar por el querySelector del parent a llenar.
-  }
-]
+  { especialidad: radiologia, div: tbodyRadioDiv },
+  { especialidad: traumatologia, div: tbodyTraumaDiv },
+  { especialidad: dental, div: tbodyDentalDiv }
+];
 
-//especialidadDiv.forEach( e => recorrerPintar(e.especialidad, e.div) );
+especialidadDiv.forEach( e => recorrerPintar(e.especialidad, e.div) );
 
