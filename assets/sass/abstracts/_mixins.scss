@@ -1,0 +1,5 @@
+@mixin basic-box-style {
+  color: $white;
+  background: $dark-gray;
+  box-shadow: 0 0 16px 8px $white, 0 0 8px 4px $dark-gray;
+}
