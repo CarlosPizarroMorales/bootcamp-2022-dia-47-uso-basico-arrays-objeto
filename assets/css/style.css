@@ -63,6 +63,8 @@ main {
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
+  justify-content: center;
+  align-items: stretch;
   padding: 1rem;
 }
 main table, main caption {
