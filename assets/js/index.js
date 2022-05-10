@@ -56,6 +56,7 @@ const tbodyDentalDiv = document.querySelector('#tbody-dental');
  **           FUNCIONES DE PINTADO           **
  **********************************************/
 
+ 
 //* PRIMERAS Y ÚLTIMAS ATENCIONES 
 firstLastRadio.innerText = radiologiaFirstLast;
 firstLastTrauma.innerText = traumatologiaFirstLast;
